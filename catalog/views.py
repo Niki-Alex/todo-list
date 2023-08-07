@@ -11,6 +11,26 @@ class HomePage(generic.ListView):
     template_name = "todo/home_page.html"
 
 
+class TaskCreateView(generic.CreateView):
+    model = Task
+    fields = "__all__"
+    template_name = "todo/task_form.html"
+    success_url = reverse_lazy("catalog:home-page")
+
+
+class TaskUpdateView(generic.UpdateView):
+    model = Task
+    fields = "__all__"
+    template_name = "todo/task_form.html"
+    success_url = reverse_lazy("catalog:home-page")
+
+
+class TaskDeleteView(generic.DeleteView):
+    model = Task
+    template_name = "todo/task_confirm_delete.html"
+    success_url = reverse_lazy("catalog:home-page")
+
+
 class TagListView(generic.ListView):
     model = Tag
     template_name = "todo/tags_list.html"

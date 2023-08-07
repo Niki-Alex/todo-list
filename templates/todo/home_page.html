@@ -4,7 +4,7 @@
 {% block content %}
   <h1>
     TODO list
-    <a href="#" class="btn btn-primary link-to-page">
+    <a href="{% url 'catalog:task-create' %}" class="btn btn-primary link-to-page">
       Add task
     </a>
   </h1>
@@ -44,10 +44,10 @@
       {% for tag in task.tags.all %}
          {{ tag.name }}
       {% endfor %}
-      <a href="#" class="text">
+      <a href="{% url 'catalog:task-update' pk=task.id %}" class="text">
         Update
       </a>
-      <a href="#" class="text">
+      <a href="{% url 'catalog:task-delete' pk=task.id %}" class="text">
         Delete
       </a>
     </p>
