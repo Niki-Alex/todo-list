@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic, View
-from django.contrib.auth.mixins import LoginRequiredMixin
 
+from .forms import TaskForm
 from .models import Tag, Task
 
 
@@ -13,7 +13,7 @@ class HomePage(generic.ListView):
 
 class TaskCreateView(generic.CreateView):
     model = Task
-    fields = "__all__"
+    form_class = TaskForm
     template_name = "todo/task_form.html"
     success_url = reverse_lazy("catalog:home-page")
 
