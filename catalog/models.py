@@ -26,7 +26,7 @@ class Task(models.Model):
 
     def __str__(self):
         return (
-            f"Сontent: {self.content}\n"
+            f"Content: {self.content}\n"
             f"Created {self.created}\n"
             f"Deadline: {self.deadline}\n"
             f"Tags: {self.tags}"
