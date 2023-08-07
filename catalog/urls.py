@@ -2,9 +2,6 @@ from django.urls import path
 
 from .views import (
     HomePage,
-    # TopicListView,
-    # TopicCreateView,
-    # TopicUpdateView,
 )
 
 urlpatterns = [

@@ -9,4 +9,4 @@ from .models import Tag, Task
 
 class HomePage(generic.ListView):
     model = Task
-    # template_name = "newspaper/redactor_list.html"
+    template_name = "todo/home_page.html"
