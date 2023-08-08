@@ -13,7 +13,7 @@
     <hr>
     <h5>
       <strong>{{ task.content }}</strong>
-      {% if task.completed %}
+      {% if task.is_completed %}
         <span style="color: green">Done</span>
         <form method="post" action="{% url 'catalog:toggle-task-assign' pk=task.id %}">
           {% csrf_token %}
@@ -32,7 +32,7 @@
       {% endif %}
     </h5>
     <p>
-    {% if task.completed %}
+    {% if task.is_completed %}
       Created: {{ task.created }}
     {% else %}
       Created: {{ task.created }},
