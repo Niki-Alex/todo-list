@@ -60,11 +60,7 @@ class ToggleAssignToTaskView(View):
     def post(self, request, pk):
         task = get_object_or_404(Task, id=pk)
 
-        if task.completed:
-            task.completed = False
-        else:
-            task.completed = True
-
+        task.completed = not task.completed
         task.save()
 
         return redirect(reverse_lazy(
